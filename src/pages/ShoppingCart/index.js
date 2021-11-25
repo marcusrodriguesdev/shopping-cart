@@ -1,6 +1,7 @@
 import React from 'react';
 import { GlobalStyles } from '@material-ui/styled-engine';
 import AppBar from '@mui/material/AppBar';
+import { FaHome } from 'react-icons/fa';
 import {
   Container, Link, Toolbar, Typography, CssBaseline,
 } from '@mui/material';
@@ -35,19 +36,10 @@ function ShoppingCart() {
           <nav>
             <Link
               variant="button"
-              color="text.primary"
+              color="#000"
               href="#aa"
-              sx={{ my: 1, mx: 1.5 }}
             >
-              Internet
-            </Link>
-            <Link
-              variant="button"
-              color="text.primary"
-              href="#tv"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              Televisão
+              <FaHome size={30} />
             </Link>
           </nav>
         </Toolbar>
@@ -82,7 +74,7 @@ function ShoppingCart() {
         >
           Selecione um plano de Internet para continuar
         </Typography>
-        <CardProduct title="100MB" />
+        <CardProduct title="100MB" price="R$ 50,00" />
       </Container>
     </React.Fragment>
   );

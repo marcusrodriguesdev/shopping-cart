@@ -1,10 +1,12 @@
-import { Card, CardHeader, Grid } from '@mui/material';
+import {
+  Card, CardContent, CardHeader, Grid, Box, Typography,
+} from '@mui/material';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 // import { Container } from './styles';
 
-function CardProduct({ title, subheader }) {
+function CardProduct({ title, subheader, price }) {
   return (
     <Grid
       item
@@ -27,6 +29,23 @@ function CardProduct({ title, subheader }) {
               : theme.palette.grey[700]),
           }}
         />
+        <CardContent>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'baseline',
+              mb: 2,
+            }}
+          >
+            <Typography component="h2" variant="h4" color="text.primary">
+              { price }
+            </Typography>
+          </Box>
+          <Typography align="center" component="p" fontSize="16px" color="gray">
+            + DETALHES
+          </Typography>
+        </CardContent>
       </Card>
     </Grid>
   );
@@ -37,4 +56,5 @@ export default CardProduct;
 CardProduct.propTypes = {
   title: PropTypes.number.isRequired,
   subheader: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
 };
