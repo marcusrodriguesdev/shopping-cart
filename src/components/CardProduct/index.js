@@ -1,5 +1,5 @@
 import {
-  Card, CardContent, CardHeader, Grid, Box, Typography,
+  Card, CardContent, CardHeader, Grid, Box, Typography, Button, CardActions,
 } from '@mui/material';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -46,6 +46,11 @@ function CardProduct({ title, subheader, price }) {
             + DETALHES
           </Typography>
         </CardContent>
+        <CardActions>
+          <Button fullWidth color="secondary" variant="outlined">
+            SELECIONAR
+          </Button>
+        </CardActions>
       </Card>
     </Grid>
   );
