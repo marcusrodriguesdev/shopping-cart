@@ -13,7 +13,8 @@ import Context from '../../context/Context';
 
 function ShoppingCart() {
   const { data } = useContext(Context);
-  console.log(data);
+  const { internet } = data;
+  console.log(internet);
   return (
     <React.Fragment>
       <GlobalStyles styles={{
@@ -80,7 +81,7 @@ function ShoppingCart() {
         >
           Selecione um plano de Internet para continuar
         </Typography>
-        {/* { data.map(({ precosInternet, planosInternet }, index) => (
+        { internet.map(({ precosInternet, planosInternet }, index) => (
           <Cards key={index}>
             <CardProduct
               title={planosInternet}
@@ -88,7 +89,7 @@ function ShoppingCart() {
               name="internet"
             />
           </Cards>
-        )) } */}
+        )) }
       </Container>
       <Container component="main" maxWidth="md">
         <Typography

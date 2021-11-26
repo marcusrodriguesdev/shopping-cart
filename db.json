@@ -6,10 +6,10 @@
     }
   ],
   "produtos": {
-    "internet": [{
+    "internet": {
       "precosInternet": [ 50, 100, 100 ],
       "planosInternet": [ 100, 200, 300]
-    }]
+    }
   },
   "profile": {
     "name": "marcusrodriguesdev"

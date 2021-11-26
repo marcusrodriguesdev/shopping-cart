@@ -2,11 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 function Input({
-  name, onChange, value, id, type, text,
+  name, onChange, value, id, type,
 }) {
   return (
     <label htmlFor={id}>
-      { text }
       <input
         type={type}
         name={name}
@@ -23,7 +22,6 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
 };
 
 export default Input;
