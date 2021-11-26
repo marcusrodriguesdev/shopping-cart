@@ -10,5 +10,14 @@ export const Container = styled.footer`
 
   div {
     display: flex;
+
+    p {
+      font-size: 19px;
+    }
+
+    .icon {
+      margin-top: 17px;
+      margin-left: 15px;
+    }
   }
 `;
