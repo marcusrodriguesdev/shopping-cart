@@ -7,16 +7,16 @@
   ],
   "produtos": {
     "internet": { 
-      "plano1": "100MB",
-      "plano2": "200MB", 
-      "plano3": "300MB"
+      "planoInternet1": "100MB",
+      "planoInternet2": "200MB", 
+      "planoInternet3": "300MB"
      },
     "fixo": {
-      "plano1": "Ilimitado Fixo brasil"
+      "planoFixo1": "Ilimitado Fixo brasil"
     },
     "tv": {
-      "plano1": "Ultimate HD",
-      "plano2": "Full HD"
+      "planoTv1": "Ultimate HD",
+      "planoTv2": "Full HD"
     }
   },
   "profile": {
