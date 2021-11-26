@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 function Input({
-  name, onChange, value, id, type,
+  name, onChange, value, id, type, disabled, checked,
 }) {
   return (
     <label htmlFor={id}>
@@ -11,6 +11,8 @@ function Input({
         name={name}
         onChange={onChange}
         value={value}
+        disabled={disabled}
+        checked={checked}
       />
     </label>
   );
@@ -22,6 +24,8 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  checked: PropTypes.bool.isRequired,
 };
 
 export default Input;

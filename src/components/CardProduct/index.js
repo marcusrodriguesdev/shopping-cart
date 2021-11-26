@@ -6,10 +6,8 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 import Context from '../../context/Context';
 
-// import { Container } from './styles';
-
 function CardProduct({
-  price, name, onChange, value, product,
+  price, name, onChange, value, product, disabled, checked,
 }) {
   const { isLoading } = useContext(Context);
 
@@ -55,6 +53,8 @@ function CardProduct({
           name={name}
           value={value}
           onChange={onChange}
+          disabled={disabled}
+          checked={checked}
         />
       </CardActions>
     </Card>
@@ -65,7 +65,9 @@ export default CardProduct;
 
 CardProduct.propTypes = {
   name: PropTypes.string.isRequired,
-  product: PropTypes.arrayOf.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  checked: PropTypes.bool.isRequired,
+  product: PropTypes.objectOf(PropTypes.string).isRequired,
   onChange: PropTypes.func.isRequired,
   price: PropTypes.number.isRequired,
   value: PropTypes.string.isRequired,

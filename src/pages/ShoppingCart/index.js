@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { GlobalStyles } from '@material-ui/styled-engine';
 import AppBar from '@mui/material/AppBar';
 import { FaHome } from 'react-icons/fa';
@@ -15,6 +15,8 @@ function ShoppingCart() {
   const { planoInternet1, planoInternet2, planoInternet3 } = internetState;
   const { planoFixo1 } = fixoState;
   const { planoTv1, planoTv2 } = tvState;
+
+  const [validated, setValidated] = useState(true);
 
   return (
     <React.Fragment>
@@ -78,7 +80,6 @@ function ShoppingCart() {
           fontSize="18px"
           align="left"
           color="gray"
-          // margin="0 0 25px 0"
         >
           Selecione um plano de Internet para continuar
         </Typography>
@@ -87,16 +88,31 @@ function ShoppingCart() {
             name="internet"
             product={planoInternet1}
             price="50,00"
+            value="50"
+            disabled={false}
+            onChange={
+              ({ target }) => (target.value === '50' ? setValidated(false) : setValidated(true))
+            }
           />
           <CardProduct
             name="internet"
             product={planoInternet2}
             price="100,00"
+            value="100"
+            disabled={false}
+            onChange={
+              ({ target }) => (target.value === '100' ? setValidated(false) : setValidated(true))
+            }
           />
           <CardProduct
             name="internet"
+            value="150"
+            onChange={
+              ({ target }) => (target.value === '150' ? setValidated(false) : setValidated(true))
+            }
             product={planoInternet3}
             price="150,00"
+            disabled={false}
           />
         </Cards>
       </Container>
@@ -122,8 +138,10 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             product={planoFixo1}
+            value={49.99}
             price="49,99"
             name="fixo"
+            disabled={validated}
           />
         </Cards>
       </Container>
@@ -134,7 +152,6 @@ function ShoppingCart() {
           variant="h5"
           align="left"
           color="#005CC8"
-
         >
           TV
         </Typography>
@@ -149,13 +166,17 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             product={planoTv1}
+            value={199.99}
             price="199,99"
             name="tv"
+            disabled={validated}
           />
           <CardProduct
+            value={299.99}
             product={planoTv2}
             price="299,99"
             name="tv"
+            disabled={validated}
           />
         </Cards>
       </Container>
