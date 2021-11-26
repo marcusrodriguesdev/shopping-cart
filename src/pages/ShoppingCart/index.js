@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { GlobalStyles } from '@material-ui/styled-engine';
 import AppBar from '@mui/material/AppBar';
 import { FaHome } from 'react-icons/fa';
@@ -8,9 +8,12 @@ import {
 import CardProduct from '../../components/CardProduct';
 import { Cards } from './styles';
 import Footer from '../../components/Footer';
+import Context from '../../context/Context';
 // import Input from '../../components/Input';
 
 function ShoppingCart() {
+  const { data } = useContext(Context);
+  // const { preco50, preco100, preco150 } = data;
   return (
     <React.Fragment>
       <GlobalStyles styles={{
@@ -77,23 +80,15 @@ function ShoppingCart() {
         >
           Selecione um plano de Internet para continuar
         </Typography>
-        <Cards>
-          <CardProduct
-            title="100MB"
-            price="R$ 50,00"
-            name="internet"
-          />
-          <CardProduct
-            title="150MB"
-            price="R$ 100,00"
-            name="internet"
-          />
-          <CardProduct
-            title="200MB"
-            price="R$ 150,00"
-            name="internet"
-          />
-        </Cards>
+        { data.map(({ preco50 }, index) => (
+          <Cards key={index}>
+            <CardProduct
+              title="100MB"
+              price={preco50}
+              name="internet"
+            />
+          </Cards>
+        )) }
       </Container>
       <Container component="main" maxWidth="md">
         <Typography
