@@ -7,6 +7,7 @@ import {
 } from '@mui/material';
 import CardProduct from '../../components/CardProduct';
 import { Cards } from './styles';
+import Footer from '../../components/Footer';
 // import Input from '../../components/Input';
 
 function ShoppingCart() {
@@ -153,7 +154,7 @@ function ShoppingCart() {
           />
         </Cards>
       </Container>
-      <hr />
+      <Footer />
     </React.Fragment>
   );
 }
