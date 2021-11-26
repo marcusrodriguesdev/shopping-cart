@@ -6,18 +6,8 @@
     }
   ],
   "produtos": {
-    "internet": [
-      { 
-        "preco50": "R$ 50,00",
-        "preco100": "R$ 100,00",
-        "preco150": "R$ 150,00"
-      },
-      {
-        "plano1": "100MB",
-        "plano2": "200MB",
-        "plano3": "300MB"
-      }
-    ]
+    "precosInternet": [ 50, 100, 100 ],
+    "planosInternet": [ 100, 200, 300]
   },
   "profile": {
     "name": "marcusrodriguesdev"

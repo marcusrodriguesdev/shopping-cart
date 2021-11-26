@@ -1,4 +1,4 @@
-const URL_INTERNET = 'https://my-json-server.typicode.com/marcusrodriguesdev/shopping-cart/internet';
+const URL_INTERNET = 'https://my-json-server.typicode.com/marcusrodriguesdev/shopping-cart/produtos';
 
 async function requestPlanInternet() {
   const requiriment = await fetch(URL_INTERNET)

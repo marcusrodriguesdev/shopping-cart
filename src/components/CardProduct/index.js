@@ -36,7 +36,7 @@ function CardProduct({
           }}
         >
           <Typography component="h2" variant="h4" color="text.primary">
-            { price }
+            { `R$ ${price}` }
           </Typography>
         </Box>
         <Typography align="center" component="p" fontSize="16px" color="gray">
