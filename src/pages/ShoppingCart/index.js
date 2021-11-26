@@ -12,7 +12,8 @@ import Context from '../../context/Context';
 // import Input from '../../components/Input';
 
 function ShoppingCart() {
-  const { data, isLoading } = useContext(Context);
+  const { isLoading, data } = useContext(Context);
+  console.log(data);
 
   if (isLoading) {
     return <div>Carregando...</div>;

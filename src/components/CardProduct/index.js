@@ -8,24 +8,26 @@ import Input from '../Input';
 // import { Container } from './styles';
 
 function CardProduct({
-  title, subheader, price, name, onChange, value,
+  price, name, onChange, value, data,
 }) {
   return (
 
     <Card className="Card">
-      <CardHeader
-        title={title}
-        subheader={subheader}
-        titleTypographyProps={{ align: 'center' }}
-        subheaderTypographyProps={{
-          align: 'center',
-        }}
-        sx={{
-          backgroundColor: (theme) => (theme.palette.mode === 'light'
-            ? theme.palette.grey[200]
-            : theme.palette.grey[700]),
-        }}
-      />
+      { data.map((product, index) => (
+        <CardHeader
+          key={index}
+          title={`${product}MB`}
+          titleTypographyProps={{ align: 'center' }}
+          subheaderTypographyProps={{
+            align: 'center',
+          }}
+          sx={{
+            backgroundColor: (theme) => (theme.palette.mode === 'light'
+              ? theme.palette.grey[200]
+              : theme.palette.grey[700]),
+          }}
+        />
+      )) }
       <CardContent>
         <Box
           sx={{
@@ -58,10 +60,9 @@ function CardProduct({
 export default CardProduct;
 
 CardProduct.propTypes = {
+  data: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   price: PropTypes.number.isRequired,
-  subheader: PropTypes.string.isRequired,
-  title: PropTypes.number.isRequired,
   value: PropTypes.string.isRequired,
 };
