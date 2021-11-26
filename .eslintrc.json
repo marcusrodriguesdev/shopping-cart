@@ -30,6 +30,7 @@
           ],
         "react/no-namespace": "off",
         "react/prefer-exact-props": "off",
+        "import/prefer-default-export": "off",
         "import/no-import-module-exports": "off",
         "react/no-arrow-function-lifecycle": "off",
         "react/no-invalid-html-attribute": "off",

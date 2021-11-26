@@ -6,6 +6,7 @@ import {
   Container, Link, Toolbar, Typography, CssBaseline,
 } from '@mui/material';
 import CardProduct from '../../components/CardProduct';
+import { Cards } from './styles';
 
 function ShoppingCart() {
   return (
@@ -70,11 +71,62 @@ function ShoppingCart() {
           fontSize="18px"
           align="left"
           color="gray"
-          margin="0 0 25px 0"
+          // margin="0 0 25px 0"
         >
           Selecione um plano de Internet para continuar
         </Typography>
-        <CardProduct title="100MB" price="R$ 50,00" />
+        <Cards>
+          <CardProduct title="100MB" price="R$ 50,00" />
+          <CardProduct title="150MB" price="R$ 100,00" />
+          <CardProduct title="200MB" price="R$ 150,00" />
+        </Cards>
+      </Container>
+      <Container component="main" maxWidth="md">
+        <Typography
+          className="space"
+          component="h1"
+          variant="h5"
+          align="left"
+          color="#A600FF"
+
+        >
+          Fixo
+        </Typography>
+        <Typography
+          component="p"
+          fontSize="18px"
+          align="left"
+          color="gray"
+        >
+          Agora escolha seu pacote de telefone fixo
+        </Typography>
+        <Cards>
+          <CardProduct title="Ilimitado Fixo brasil" price="R$ 49,99" />
+        </Cards>
+      </Container>
+      <Container component="main" maxWidth="md">
+        <Typography
+          className="space"
+          component="h1"
+          variant="h5"
+          align="left"
+          color="#A600FF"
+
+        >
+          TV
+        </Typography>
+        <Typography
+          component="p"
+          fontSize="18px"
+          align="left"
+          color="gray"
+        >
+          Agora escolha seu pacote de telefone fixo
+        </Typography>
+        <Cards>
+          <CardProduct title="Full HD" price="R$ 199,99" />
+          <CardProduct title="Ultimate HD" price="R$ 299,99" />
+        </Cards>
       </Container>
     </React.Fragment>
   );
