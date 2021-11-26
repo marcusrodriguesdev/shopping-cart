@@ -1,12 +1,15 @@
 import {
-  Card, CardContent, CardHeader, Box, Typography, Button, CardActions,
+  Card, CardContent, CardHeader, Box, Typography, CardActions,
 } from '@mui/material';
 import React from 'react';
 import PropTypes from 'prop-types';
+import Input from '../Input';
 
 // import { Container } from './styles';
 
-function CardProduct({ title, subheader, price }) {
+function CardProduct({
+  title, subheader, price, name, onChange, value,
+}) {
   return (
 
     <Card className="Card">
@@ -41,9 +44,12 @@ function CardProduct({ title, subheader, price }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button fullWidth color="secondary" variant="outlined">
-          SELECIONAR
-        </Button>
+        <Input
+          type="radio"
+          name={name}
+          value={value}
+          onChange={onChange}
+        />
       </CardActions>
     </Card>
   );
@@ -52,7 +58,10 @@ function CardProduct({ title, subheader, price }) {
 export default CardProduct;
 
 CardProduct.propTypes = {
-  title: PropTypes.number.isRequired,
-  subheader: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   price: PropTypes.number.isRequired,
+  subheader: PropTypes.string.isRequired,
+  title: PropTypes.number.isRequired,
+  value: PropTypes.string.isRequired,
 };

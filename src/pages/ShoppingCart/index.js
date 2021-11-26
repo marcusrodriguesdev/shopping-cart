@@ -7,6 +7,7 @@ import {
 } from '@mui/material';
 import CardProduct from '../../components/CardProduct';
 import { Cards } from './styles';
+// import Input from '../../components/Input';
 
 function ShoppingCart() {
   return (
@@ -76,9 +77,21 @@ function ShoppingCart() {
           Selecione um plano de Internet para continuar
         </Typography>
         <Cards>
-          <CardProduct title="100MB" price="R$ 50,00" />
-          <CardProduct title="150MB" price="R$ 100,00" />
-          <CardProduct title="200MB" price="R$ 150,00" />
+          <CardProduct
+            title="100MB"
+            price="R$ 50,00"
+            name="internet"
+          />
+          <CardProduct
+            title="150MB"
+            price="R$ 100,00"
+            name="internet"
+          />
+          <CardProduct
+            title="200MB"
+            price="R$ 150,00"
+            name="internet"
+          />
         </Cards>
       </Container>
       <Container component="main" maxWidth="md">
@@ -101,7 +114,11 @@ function ShoppingCart() {
           Agora escolha seu pacote de telefone fixo
         </Typography>
         <Cards>
-          <CardProduct title="Ilimitado Fixo brasil" price="R$ 49,99" />
+          <CardProduct
+            title="Ilimitado Fixo brasil"
+            price="R$ 49,99"
+            name="fixo"
+          />
         </Cards>
       </Container>
       <Container component="main" maxWidth="md">
@@ -124,10 +141,19 @@ function ShoppingCart() {
           Agora escolha seu pacote de telefone fixo
         </Typography>
         <Cards>
-          <CardProduct title="Full HD" price="R$ 199,99" />
-          <CardProduct title="Ultimate HD" price="R$ 299,99" />
+          <CardProduct
+            title="Full HD"
+            price="R$ 199,99"
+            name="tv"
+          />
+          <CardProduct
+            title="Ultimate HD"
+            price="R$ 299,99"
+            name="tv"
+          />
         </Cards>
       </Container>
+      <hr />
     </React.Fragment>
   );
 }
