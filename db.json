@@ -5,6 +5,18 @@
       "title": "hello"
     }
   ],
+  "internet": [
+    { 
+      "preco50": "R$ 50,00",
+      "preco100": "R$ 100,00",
+      "preco150": "R$ 150,00"
+    },
+    {
+      "100": "100MB",
+      "200": "200MB",
+      "300": "300 MB"
+    }
+  ],
   "profile": {
     "name": "marcusrodriguesdev"
   }
