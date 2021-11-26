@@ -13,8 +13,6 @@ import Context from '../../context/Context';
 
 function ShoppingCart() {
   const { data, isLoading } = useContext(Context);
-  const { internet } = data;
-  console.log(internet);
 
   if (isLoading) {
     return <div>Carregando...</div>;
@@ -86,15 +84,11 @@ function ShoppingCart() {
         >
           Selecione um plano de Internet para continuar
         </Typography>
-        {/* { data.map(({ precosInternet, planosInternet }, index) => (
-          <Cards key={index}>
-            <CardProduct
-              title={planosInternet}
-              price={precosInternet}
-              name="internet"
-            />
-          </Cards>
-        )) } */}
+        <Cards>
+          <CardProduct
+            name="internet"
+          />
+        </Cards>
       </Container>
       <Container component="main" maxWidth="md">
         <Typography
