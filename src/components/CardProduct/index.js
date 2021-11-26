@@ -1,22 +1,29 @@
 import {
   Card, CardContent, CardHeader, Box, Typography, CardActions,
 } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input';
+import Context from '../../context/Context';
 
 // import { Container } from './styles';
 
 function CardProduct({
-  price, name, onChange, value, data,
+  price, name, onChange, value,
 }) {
+  const { internetState, isLoading } = useContext(Context);
+
+  if (isLoading) {
+    return <div>Carregando...</div>;
+  }
+
   return (
 
     <Card className="Card">
-      { data.map((product, index) => (
+      { internetState.map((product, index) => (
         <CardHeader
           key={index}
-          title={`${product}MB`}
+          title={product}
           titleTypographyProps={{ align: 'center' }}
           subheaderTypographyProps={{
             align: 'center',
@@ -60,8 +67,8 @@ function CardProduct({
 export default CardProduct;
 
 CardProduct.propTypes = {
-  data: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  // products: PropTypes.arrayOf.isRequired,
   onChange: PropTypes.func.isRequired,
   price: PropTypes.number.isRequired,
   value: PropTypes.string.isRequired,

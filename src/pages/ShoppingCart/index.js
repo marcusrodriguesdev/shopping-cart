@@ -9,15 +9,14 @@ import CardProduct from '../../components/CardProduct';
 import { Cards } from './styles';
 import Footer from '../../components/Footer';
 import Context from '../../context/Context';
-// import Input from '../../components/Input';
 
 function ShoppingCart() {
-  const { isLoading, data } = useContext(Context);
-  console.log(data);
-
-  if (isLoading) {
+  const { internetState } = useContext(Context);
+  if (internetState.length === 0) {
     return <div>Carregando...</div>;
   }
+
+  console.log(internetState[0]);
 
   return (
     <React.Fragment>
@@ -88,6 +87,7 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             name="internet"
+            products={internetState}
           />
         </Cards>
       </Container>

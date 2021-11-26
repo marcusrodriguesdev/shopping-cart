@@ -6,12 +6,15 @@ import Context from './Context';
 function Provider({ children }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [internetState, setInternetState] = useState([]);
 
   useEffect(() => {
     async function fetchApi() {
       const response = await requestPlanInternet();
-      setData(response);
       setIsLoading(false);
+      const { internet } = response;
+      setData(response);
+      setInternetState(internet);
     }
     fetchApi();
   }, []);
@@ -19,6 +22,7 @@ function Provider({ children }) {
   const context = {
     data,
     isLoading,
+    internetState,
   };
   return (
     <Context.Provider value={context}>

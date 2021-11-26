@@ -6,7 +6,11 @@
     }
   ],
   "produtos": {
-    "internet": ["100MB", "200MB", "300MB"],
+    "internet": { 
+      "plan1": "100MB",
+      "plan2": "200MB", 
+      "plan": "300MB"
+     },
     "fixo": ["Ilimitado Fixo brasil"],
     "tv": ["Ultimate HD", "Full HD"]
   },
