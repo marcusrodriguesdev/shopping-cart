@@ -7,12 +7,17 @@
   ],
   "produtos": {
     "internet": { 
-      "plan1": "100MB",
-      "plan2": "200MB", 
-      "plan": "300MB"
+      "plano1": "100MB",
+      "plano2": "200MB", 
+      "plano3": "300MB"
      },
-    "fixo": ["Ilimitado Fixo brasil"],
-    "tv": ["Ultimate HD", "Full HD"]
+    "fixo": {
+      "plano1": "Ilimitado Fixo brasil"
+    },
+    "tv": {
+      "plano1": "Ultimate HD",
+      "plano2": "Full HD"
+    }
   },
   "profile": {
     "name": "marcusrodriguesdev"

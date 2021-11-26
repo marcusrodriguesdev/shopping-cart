@@ -12,12 +12,7 @@ import Context from '../../context/Context';
 
 function ShoppingCart() {
   const { internetState } = useContext(Context);
-  if (internetState.length === 0) {
-    return <div>Carregando...</div>;
-  }
-
-  console.log(internetState[0]);
-
+  const { plan1, plan2, plan } = internetState;
   return (
     <React.Fragment>
       <GlobalStyles styles={{
@@ -87,7 +82,18 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             name="internet"
-            products={internetState}
+            product={plan1}
+            price="50,00"
+          />
+          <CardProduct
+            name="internet"
+            product={plan2}
+            price="100,00"
+          />
+          <CardProduct
+            name="internet"
+            product={plan}
+            price="150,00"
           />
         </Cards>
       </Container>

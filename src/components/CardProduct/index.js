@@ -9,9 +9,9 @@ import Context from '../../context/Context';
 // import { Container } from './styles';
 
 function CardProduct({
-  price, name, onChange, value,
+  price, name, onChange, value, product,
 }) {
-  const { internetState, isLoading } = useContext(Context);
+  const { isLoading } = useContext(Context);
 
   if (isLoading) {
     return <div>Carregando...</div>;
@@ -20,21 +20,18 @@ function CardProduct({
   return (
 
     <Card className="Card">
-      { internetState.map((product, index) => (
-        <CardHeader
-          key={index}
-          title={product}
-          titleTypographyProps={{ align: 'center' }}
-          subheaderTypographyProps={{
-            align: 'center',
-          }}
-          sx={{
-            backgroundColor: (theme) => (theme.palette.mode === 'light'
-              ? theme.palette.grey[200]
-              : theme.palette.grey[700]),
-          }}
-        />
-      )) }
+      <CardHeader
+        title={product}
+        titleTypographyProps={{ align: 'center' }}
+        subheaderTypographyProps={{
+          align: 'center',
+        }}
+        sx={{
+          backgroundColor: (theme) => (theme.palette.mode === 'light'
+            ? theme.palette.grey[200]
+            : theme.palette.grey[700]),
+        }}
+      />
       <CardContent>
         <Box
           sx={{
@@ -68,7 +65,7 @@ export default CardProduct;
 
 CardProduct.propTypes = {
   name: PropTypes.string.isRequired,
-  // products: PropTypes.arrayOf.isRequired,
+  product: PropTypes.arrayOf.isRequired,
   onChange: PropTypes.func.isRequired,
   price: PropTypes.number.isRequired,
   value: PropTypes.string.isRequired,

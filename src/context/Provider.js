@@ -4,23 +4,23 @@ import requestPlanInternet from '../services';
 import Context from './Context';
 
 function Provider({ children }) {
-  const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [internetState, setInternetState] = useState([]);
+  const [internetState, setInternetState] = useState({});
+  const [fixoState, setFixoState] = useState({});
 
   useEffect(() => {
     async function fetchApi() {
       const response = await requestPlanInternet();
       setIsLoading(false);
-      const { internet } = response;
-      setData(response);
+      const { internet, fixo } = response;
+      setFixoState(fixo);
       setInternetState(internet);
     }
     fetchApi();
   }, []);
 
   const context = {
-    data,
+    fixoState,
     isLoading,
     internetState,
   };
