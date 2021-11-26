@@ -7,8 +7,8 @@ function Footer() {
     <Container>
       <p>Footer</p>
       <div>
-        <FaShoppingCart size={25} />
-        <span>R$ 0,00</span>
+        <FaShoppingCart size={25} color="black" />
+        <p>R$ 0,00</p>
       </div>
     </Container>
   );

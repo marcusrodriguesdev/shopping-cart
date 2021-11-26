@@ -139,7 +139,7 @@ function ShoppingCart() {
           align="left"
           color="gray"
         >
-          Agora escolha seu pacote de telefone fixo
+          Escolha um pacote de TV
         </Typography>
         <Cards>
           <CardProduct

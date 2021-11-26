@@ -7,4 +7,8 @@ export const Container = styled.footer`
   display: flex;
   height: 80px;
   justify-content: space-around;
+
+  div {
+    display: flex;
+  }
 `;
