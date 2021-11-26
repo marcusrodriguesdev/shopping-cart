@@ -11,9 +11,10 @@ import Footer from '../../components/Footer';
 import Context from '../../context/Context';
 
 function ShoppingCart() {
-  const { internetState } = useContext(Context);
-  const { plano1, plano2, plano3 } = internetState;
-  // const { plano1 } = fixoState;
+  const { internetState, fixoState, tvState } = useContext(Context);
+  const { planoInternet1, planoInternet2, planoInternet3 } = internetState;
+  const { planoFixo1 } = fixoState;
+  const { planoTv1, planoTv2 } = tvState;
 
   return (
     <React.Fragment>
@@ -84,17 +85,17 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             name="internet"
-            product={plano1}
+            product={planoInternet1}
             price="50,00"
           />
           <CardProduct
             name="internet"
-            product={plano2}
+            product={planoInternet2}
             price="100,00"
           />
           <CardProduct
             name="internet"
-            product={plano3}
+            product={planoInternet3}
             price="150,00"
           />
         </Cards>
@@ -120,7 +121,7 @@ function ShoppingCart() {
         </Typography>
         <Cards>
           <CardProduct
-            products={plano1}
+            product={planoFixo1}
             price="49,99"
             name="fixo"
           />
@@ -147,12 +148,12 @@ function ShoppingCart() {
         </Typography>
         <Cards>
           <CardProduct
-            title="Full HD"
+            product={planoTv1}
             price="199,99"
             name="tv"
           />
           <CardProduct
-            title="Ultimate HD"
+            product={planoTv2}
             price="299,99"
             name="tv"
           />

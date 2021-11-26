@@ -7,20 +7,23 @@ function Provider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
   const [internetState, setInternetState] = useState({});
   const [fixoState, setFixoState] = useState({});
+  const [tvState, setTvState] = useState({});
 
   useEffect(() => {
     async function fetchApi() {
       const response = await requestPlanInternet();
       setIsLoading(false);
-      const { internet, fixo } = response;
+      const { internet, fixo, tv } = response;
       setFixoState(fixo);
       setInternetState(internet);
+      setTvState(tv);
     }
     fetchApi();
   }, []);
 
   const context = {
     fixoState,
+    tvState,
     isLoading,
     internetState,
   };
