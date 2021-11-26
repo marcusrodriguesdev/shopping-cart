@@ -62,7 +62,7 @@ function ShoppingCart() {
           component="h1"
           variant="h5"
           align="left"
-          color="#A600FF"
+          color="#005CC8"
 
         >
           Internet
@@ -100,7 +100,7 @@ function ShoppingCart() {
           component="h1"
           variant="h5"
           align="left"
-          color="#A600FF"
+          color="#005CC8"
 
         >
           Fixo
@@ -127,7 +127,7 @@ function ShoppingCart() {
           component="h1"
           variant="h5"
           align="left"
-          color="#A600FF"
+          color="#005CC8"
 
         >
           TV
