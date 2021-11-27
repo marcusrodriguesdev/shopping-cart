@@ -8,6 +8,7 @@ function Footer() {
   const {
     totalPrice, internetValue, tvValue, fixoValue, setTotalPrice,
   } = useContext(Context);
+
   function sumTotalPrice() {
     const sumTotal = (Number(internetValue) + Number(tvValue) + Number(fixoValue));
     return setTotalPrice(sumTotal);

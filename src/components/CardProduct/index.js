@@ -2,12 +2,11 @@ import {
   Card, CardContent, CardHeader, Box, Typography, CardActions,
 } from '@mui/material';
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
 import Input from '../Input';
 import Context from '../../context/Context';
 
 function CardProduct({
-  price, name, onChange, value, product, disabled, checked, onClick,
+  price, name, onChange, value, product, disabled, checked,
 }) {
   const { isLoading } = useContext(Context);
 
@@ -52,7 +51,6 @@ function CardProduct({
           type="radio"
           name={name}
           value={value}
-          onClick={onClick}
           onChange={onChange}
           disabled={disabled}
           checked={checked}
@@ -63,14 +61,3 @@ function CardProduct({
 }
 
 export default CardProduct;
-
-CardProduct.propTypes = {
-  name: PropTypes.string.isRequired,
-  disabled: PropTypes.bool.isRequired,
-  checked: PropTypes.bool.isRequired,
-  product: PropTypes.objectOf(PropTypes.object).isRequired,
-  onChange: PropTypes.func.isRequired,
-  onClick: PropTypes.func.isRequired,
-  price: PropTypes.number.isRequired,
-  value: PropTypes.string.isRequired,
-};

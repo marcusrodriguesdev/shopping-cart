@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import requestPlanInternet from '../services';
 import Context from './Context';
@@ -45,9 +44,5 @@ function Provider({ children }) {
     </Context.Provider>
   );
 }
-
-Provider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Provider;

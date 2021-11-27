@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { GlobalStyles } from '@material-ui/styled-engine';
-import AppBar from '@mui/material/AppBar';
 import { FaHome } from 'react-icons/fa';
 import {
-  Container, Link, Toolbar, Typography, CssBaseline,
+  Container, Link, Toolbar, Typography, CssBaseline, AppBar,
 } from '@mui/material';
 import CardProduct from '../../components/CardProduct';
 import { Cards } from './styles';
@@ -15,8 +14,6 @@ function ShoppingCart() {
     internetState, fixoState, tvState, setTvValue,
     setFixoValue, setInternetValue,
   } = useContext(Context);
-  // console.log(tvValue);
-  // console.log(fixoValue);
 
   const { planoInternet1, planoInternet2, planoInternet3 } = internetState;
   const { planoFixo1 } = fixoState;
@@ -51,7 +48,6 @@ function ShoppingCart() {
             color="inherit"
             noWrap
             sx={{ flexGrow: 1 }}
-            fontWeigth="700"
           >
             M2 Center
           </Typography>
@@ -157,7 +153,7 @@ function ShoppingCart() {
             price="50,00"
             name="fixo"
             disabled={validated}
-            onClick={({ target }) => {
+            onChange={({ target }) => {
               setFixoValue(target.value);
             }}
           />
@@ -188,7 +184,7 @@ function ShoppingCart() {
             price="90,00"
             name="tv"
             disabled={validated}
-            onClick={({ target }) => {
+            onChange={({ target }) => {
               setTvValue(target.value);
             }}
           />
@@ -198,7 +194,7 @@ function ShoppingCart() {
             price="130,00"
             name="tv"
             disabled={validated}
-            onClick={({ target }) => {
+            onChange={({ target }) => {
               setTvValue(target.value);
             }}
           />
