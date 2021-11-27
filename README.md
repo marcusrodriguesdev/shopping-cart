@@ -6,7 +6,6 @@ funcionalidades a baixo:
     - [x] O usuário poderá selecionar apenas um produto por categoria
     - [x] Ao selecionar o produto, automaticamente ele será incluído no carrinho,
 atualizando o preço e as informações do carrinho
-    - [ ] Possibilidade do usuário remover o produto do carrinho
     - [x] Sistema totalmente responsivo
     - [x] As opções de TV e telefone deverão ficar desativadas até o usuário
 selecionar alguma opção de Internet
