@@ -11,12 +11,20 @@ import Footer from '../../components/Footer';
 import Context from '../../context/Context';
 
 function ShoppingCart() {
-  const { internetState, fixoState, tvState } = useContext(Context);
+  const {
+    internetState, fixoState, tvState,
+  } = useContext(Context);
   const { planoInternet1, planoInternet2, planoInternet3 } = internetState;
   const { planoFixo1 } = fixoState;
   const { planoTv1, planoTv2 } = tvState;
 
   const [validated, setValidated] = useState(true);
+
+  function validatedButton({ value }, number) {
+    if (value === number) {
+      return setValidated(false);
+    } return setValidated(true);
+  }
 
   return (
     <React.Fragment>
@@ -90,9 +98,9 @@ function ShoppingCart() {
             price="50,00"
             value="50"
             disabled={false}
-            onChange={
-              ({ target }) => (target.value === '50' ? setValidated(false) : setValidated(true))
-            }
+            onChange={({ target }) => {
+              validatedButton(target, '50');
+            }}
           />
           <CardProduct
             name="internet"
@@ -100,16 +108,16 @@ function ShoppingCart() {
             price="100,00"
             value="100"
             disabled={false}
-            onChange={
-              ({ target }) => (target.value === '100' ? setValidated(false) : setValidated(true))
-            }
+            onChange={({ target }) => {
+              validatedButton(target, '100');
+            }}
           />
           <CardProduct
             name="internet"
             value="150"
-            onChange={
-              ({ target }) => (target.value === '150' ? setValidated(false) : setValidated(true))
-            }
+            onChange={({ target }) => {
+              validatedButton(target, '150');
+            }}
             product={planoInternet3}
             price="150,00"
             disabled={false}
@@ -138,7 +146,7 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             product={planoFixo1}
-            value={49.99}
+            value="49.99"
             price="49,99"
             name="fixo"
             disabled={validated}
@@ -166,13 +174,13 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             product={planoTv1}
-            value={199.99}
+            value="199.99"
             price="199,99"
             name="tv"
             disabled={validated}
           />
           <CardProduct
-            value={299.99}
+            value="299.99"
             product={planoTv2}
             price="299,99"
             name="tv"

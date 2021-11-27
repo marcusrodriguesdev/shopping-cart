@@ -67,7 +67,7 @@ CardProduct.propTypes = {
   name: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
   checked: PropTypes.bool.isRequired,
-  product: PropTypes.objectOf(PropTypes.string).isRequired,
+  product: PropTypes.objectOf(PropTypes.object).isRequired,
   onChange: PropTypes.func.isRequired,
   price: PropTypes.number.isRequired,
   value: PropTypes.string.isRequired,

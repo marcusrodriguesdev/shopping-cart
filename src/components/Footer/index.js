@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from '@mui/material';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Container } from './styles';
+import Context from '../../context/Context';
 
 function Footer() {
+  const { totalPrice } = useContext(Context);
   return (
     <Container>
       <Button
@@ -13,7 +15,11 @@ function Footer() {
         Continuar
       </Button>
       <div>
-        <p>R$ 0,00</p>
+        <p>
+          R$
+          {' '}
+          {totalPrice.toFixed(2)}
+        </p>
         <FaShoppingCart size={25} color="black" className="icon" />
       </div>
     </Container>
