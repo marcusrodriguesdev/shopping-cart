@@ -1,11 +1,17 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Provider from './context/Provider';
-import ShoppingCart from './pages/ShoppingCart';
+import Products from './pages/Products';
 
 function App() {
   return (
     <Provider>
-      <ShoppingCart />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Products />} />
+
+        </Routes>
+      </BrowserRouter>
     </Provider>
   );
 }
