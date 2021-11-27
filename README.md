@@ -25,3 +25,19 @@ Internet: 100MB, 200MB, 300MB
  - Desenvolvido por <a href="https://www.linkedin.com/in/marcusrodriguesdev/" target="_blank">Marcus Rodrigues</a>.
  - Email:
    - marcus.rodrigues10@hotmail.com
+ - Tecnologia e Ferramentas:
+   - ReactJS;
+   - styled-components;
+   - material-ui;
+   - my-json-server
+   - context api
+
+## Visualizar
+ - No seu terminal, clone o respositório:
+   - ``` git clone git@github.com:marcusrodriguesdev/shopping-cart.git ```
+ - Entre no diretório do projeto
+   - ``` cd shopping-cart```
+ - Na pasta raíz, instale as dependências:
+   - ``` npm install ```
+ - E inicialize
+   - ``` npm start ```
