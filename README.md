@@ -4,7 +4,7 @@
 funcionalidades a baixo:
     - [x] Listagem de produtos por categoria (internet, tv, telefone fixo)
     - [x] O usuário poderá selecionar apenas um produto por categoria
-    - [ ] Ao selecionar o produto, automaticamente ele será incluído no carrinho,
+    - [x] Ao selecionar o produto, automaticamente ele será incluído no carrinho,
 atualizando o preço e as informações do carrinho
     - [ ] Possibilidade do usuário remover o produto do carrinho
     - [x] Sistema totalmente responsivo
@@ -21,3 +21,8 @@ com todos os objetos criados pelo desenvolvedor.
 Fixo: Ilimitado Fixo brasil
 TV: Ultimate HD, Full HD
 Internet: 100MB, 200MB, 300MB
+
+## Desenvolvimento
+ - Desenvolvido por <a href="https://www.linkedin.com/in/marcusrodriguesdev/" target="_blank">Marcus Rodrigues</a>.
+ - Email:
+   - marcus.rodrigues10@hotmail.com
