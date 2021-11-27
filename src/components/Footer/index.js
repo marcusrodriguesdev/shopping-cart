@@ -5,12 +5,20 @@ import { Container } from './styles';
 import Context from '../../context/Context';
 
 function Footer() {
-  const { totalPrice } = useContext(Context);
+  const {
+    totalPrice, internetValue, tvValue, fixoValue, setTotalPrice,
+  } = useContext(Context);
+  function sumTotalPrice() {
+    const sumTotal = (Number(internetValue) + Number(tvValue) + Number(fixoValue));
+    return setTotalPrice(sumTotal);
+  }
+
   return (
     <Container>
       <Button
         variant="contained"
         color="primary"
+        onClick={() => sumTotalPrice()}
       >
         Continuar
       </Button>

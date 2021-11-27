@@ -9,6 +9,9 @@ function Provider({ children }) {
   const [fixoState, setFixoState] = useState({});
   const [tvState, setTvState] = useState({});
   const [totalPrice, setTotalPrice] = useState(0);
+  const [internetValue, setInternetValue] = useState(0);
+  const [fixoValue, setFixoValue] = useState(0);
+  const [tvValue, setTvValue] = useState(0);
 
   useEffect(() => {
     async function fetchApi() {
@@ -29,6 +32,12 @@ function Provider({ children }) {
     internetState,
     totalPrice,
     setTotalPrice,
+    internetValue,
+    setInternetValue,
+    fixoValue,
+    setFixoValue,
+    tvValue,
+    setTvValue,
   };
   return (
     <Context.Provider value={context}>

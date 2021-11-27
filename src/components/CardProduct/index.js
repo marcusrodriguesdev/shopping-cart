@@ -7,7 +7,7 @@ import Input from '../Input';
 import Context from '../../context/Context';
 
 function CardProduct({
-  price, name, onChange, value, product, disabled, checked,
+  price, name, onChange, value, product, disabled, checked, onClick,
 }) {
   const { isLoading } = useContext(Context);
 
@@ -52,6 +52,7 @@ function CardProduct({
           type="radio"
           name={name}
           value={value}
+          onClick={onClick}
           onChange={onChange}
           disabled={disabled}
           checked={checked}
@@ -69,6 +70,7 @@ CardProduct.propTypes = {
   checked: PropTypes.bool.isRequired,
   product: PropTypes.objectOf(PropTypes.object).isRequired,
   onChange: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   price: PropTypes.number.isRequired,
   value: PropTypes.string.isRequired,
 };

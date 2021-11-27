@@ -12,8 +12,12 @@ import Context from '../../context/Context';
 
 function ShoppingCart() {
   const {
-    internetState, fixoState, tvState,
+    internetState, fixoState, tvState, setTvValue,
+    setFixoValue, setInternetValue,
   } = useContext(Context);
+  // console.log(tvValue);
+  // console.log(fixoValue);
+
   const { planoInternet1, planoInternet2, planoInternet3 } = internetState;
   const { planoFixo1 } = fixoState;
   const { planoTv1, planoTv2 } = tvState;
@@ -96,27 +100,30 @@ function ShoppingCart() {
             name="internet"
             product={planoInternet1}
             price="50,00"
-            value="50"
+            value={50}
             disabled={false}
             onChange={({ target }) => {
               validatedButton(target, '50');
+              setInternetValue(target.value);
             }}
           />
           <CardProduct
             name="internet"
             product={planoInternet2}
             price="100,00"
-            value="100"
+            value={100}
             disabled={false}
             onChange={({ target }) => {
               validatedButton(target, '100');
+              setInternetValue(target.value);
             }}
           />
           <CardProduct
             name="internet"
-            value="150"
+            value={150}
             onChange={({ target }) => {
               validatedButton(target, '150');
+              setInternetValue(target.value);
             }}
             product={planoInternet3}
             price="150,00"
@@ -146,10 +153,13 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             product={planoFixo1}
-            value="49.99"
-            price="49,99"
+            value={50}
+            price="50,00"
             name="fixo"
             disabled={validated}
+            onClick={({ target }) => {
+              setFixoValue(target.value);
+            }}
           />
         </Cards>
       </Container>
@@ -174,17 +184,23 @@ function ShoppingCart() {
         <Cards>
           <CardProduct
             product={planoTv1}
-            value="199.99"
-            price="199,99"
+            value={90}
+            price="90,00"
             name="tv"
             disabled={validated}
+            onClick={({ target }) => {
+              setTvValue(target.value);
+            }}
           />
           <CardProduct
-            value="299.99"
+            value={130}
             product={planoTv2}
-            price="299,99"
+            price="130,00"
             name="tv"
             disabled={validated}
+            onClick={({ target }) => {
+              setTvValue(target.value);
+            }}
           />
         </Cards>
       </Container>
